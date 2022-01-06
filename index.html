@@ -10,26 +10,36 @@
 </head>
 <body>
     <div class="container">
-        <div class="weatherapp">
-
-            <h1>New York</h1>
-            <ul>
-                <li>
-                    Friday, 05:00
-                </li>
-                <li>
-                    Clear
-                </li>
-            </ul>
-            <div class="row">
-                <div class="col-6">
-                    <img src="" alt=""/>
-                    12 degrees C | F
-                </div>
+        <div class="weather-wrapper">
+            <div class="weather-app">
+                <div class="overview">
+                <h1>New York</h1>
+                <ul>
+                    <li>
+                        January 6
+                    </li>
+                    <li>
+                        Thursday, 05:00
+                    </li>
+                    <li>
+                        Clear
+                    </li>
+                </ul>
+            </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="d-flex weather-temperature">
+                            <img src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png" alt="partly-cloudy" class=float-left/>
+                            <div class="float-left">
+                                 <strong> 12</strong> 
+                                 <span class= units> °F | <a href="#"> °C</a></span>
+                            </div>
+                        </div>
+                    </div>
                 <div class="col-6">
                     <ul>
                         <li>
-                            Precipitation: 10%
+                            Feels Like: 13 °C
                         </li>
                         <li>
                             Humidity: 84%
@@ -41,8 +51,9 @@
                 </div>
             </div>
         </div>
-            <small> <a href="https://github.com/als11022/weather-app-vanilla" target ="_blank"> Open-source code</a> Abby Szach</small>
-        </div>
-        <script src="src/app.js"></script>
+        <small> <a href="https://github.com/als11022/weather-app-vanilla" target ="_blank"> Open-source code</a> Abby Szach</small>
+    </div>
+    </div>
+    <script src="src/app.js"></script>
 </body>
 </html>
