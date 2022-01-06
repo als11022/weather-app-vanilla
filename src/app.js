@@ -22,10 +22,13 @@ function displayTemperature (response){
     document.querySelector("#feels-like").innerHTML = Math.round(response.data.main.feels_like);
     document.querySelector("#wind").innerHTML = Math.round(response.data.wind.speed);
     document.querySelector("#date").innerHTML = formatDate(response.data.dt * 1000);
+    document.querySelector("#icon").setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
+    document.querySelector("#icon").setAttribute("alt",  response.data.weather[0].description)
 }
 
 
 let apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New York&appid=${apiKey}&units=imperial`;
+let city = "New York";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=imperial`;
 
 axios.get(apiUrl).then(displayTemperature);
