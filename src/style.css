@@ -3,9 +3,9 @@ body {
 }
 
 h1 {
-    color: #878787;
+    color: #EC6E4C;
     font-size: 24px;
-    font-weight: 100;
+    font-weight: 700;
     line-height: 28px;
     margin-bottom: 0;
 }
@@ -26,9 +26,11 @@ li:first-letter {
 }
 a {
     text-decoration: none;
+    color: #17a2b8;
 }
 a:hover{
     text-decoration: underline;
+    color: #17a2b8;
 }
 .weather-wrapper {
     max-width: 600px;
@@ -63,7 +65,7 @@ a:hover{
 }
 
 .weather-temperature .active {
-    color: black;
+    color: #878787;
     cursor: default;
 }
 .weather-temperature .active:hover {
@@ -97,9 +99,10 @@ a:hover{
     margin: -5px;
   }
   .temp-high{
-    font-size: 15px;
+    font-size: 18px;
   }
   .temp-low {
+    color: #EC6E4C;
     font-size: 12px;
     opacity: 75%;
   }
