@@ -2,7 +2,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
-
 h1 {
     color: #878787;
     font-size: 24px;
@@ -51,7 +50,7 @@ a:hover{
 }
 
 .weather-temperature strong {
-    font-size: 64px;
+    font-size: 60px;
     font-weight: 400;
     line-height: 1;
 }
@@ -70,3 +69,38 @@ a:hover{
 .weather-temperature .active:hover {
     text-decoration: none;
 }
+
+#search-button {
+    color:#fff;
+    background-color: #17a2b8;
+}
+#current-button {
+    color: #17a2b8;
+}
+.card {
+    margin: 50px 0 5px 0;
+}
+.card-header {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+}
+.day {
+    font-size: 20px;
+    font-weight: 700;
+    color: #17A2B8;
+   
+  }
+  #day-icon{
+    height: 64px;
+    width: 64px;
+    margin: -5px;
+  }
+  .temp-high{
+    font-size: 15px;
+  }
+  .temp-low {
+    font-size: 12px;
+    opacity: 75%;
+  }
+  
