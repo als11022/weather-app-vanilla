@@ -13,7 +13,8 @@ let day = days[date.getDay()];
 return `${day}, ${hours}:${minutes}`
 }
 
-function displayForecast(){
+function displayForecast(response){
+    console.log(response.data.daily);
     let forecastElement = document.querySelector("#forecast");
     let forecastHTML = `<div class="row text-center">`;
     let days = ["SAT", "SUN", "MON", "TUE", "WED"];
@@ -31,9 +32,15 @@ function displayForecast(){
     forecastHTML = forecastHTML + `</div>`;
     forecastElement.innerHTML = forecastHTML;
 }
-
+function getForecast(coordinates) {
+    let apiKey = "a50f410ea36ad12d8cb30de68e6fc33b";
+    let units = "imperial";
+    let lat = coordinates.lat;
+    let lon = coordinates.lon;
+    let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&appid=${apiKey}&units=${units}`;
+    axios.get(apiUrl).then(displayForecast);
+}
 function retrieveCurrentData (response){
-    //console.log(response);
     fahrenheitTemp = response.data.main.temp;
     document.querySelector("#temperature").innerHTML = Math.round(fahrenheitTemp);
     document.querySelector("#city").innerHTML = response.data.name;
@@ -46,6 +53,8 @@ function retrieveCurrentData (response){
     document.querySelector("#icon").setAttribute("alt",  response.data.weather[0].description);
     document.querySelector("#icon").setAttribute("class", "float-left");
     document.querySelector("#city-input").value = null;
+
+ getForecast(response.data.coord);
 }
 
 function search(city){
@@ -62,7 +71,7 @@ function handleSubmit(event){
         search(cityInputText);
     }
     else {
-        document.querySelector("#city").innerHTML = "Unknown";
+        document.querySelector("#city").innerHTML = "Unknown Location";
         document.querySelector("#temperature").innerHTML = null;
         document.querySelector("#description").innerHTML = null;
         document.querySelector("#feels-like").innerHTML  = null;
@@ -105,8 +114,6 @@ function convertToFahrenheit (event){
 }
 
 let fahrenheitTemp = null;
-
-displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
