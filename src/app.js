@@ -13,6 +13,25 @@ let day = days[date.getDay()];
 return `${day}, ${hours}:${minutes}`
 }
 
+function displayForecast(){
+    let forecastElement = document.querySelector("#forecast");
+    let forecastHTML = `<div class="row text-center">`;
+    let days = ["SAT", "SUN", "MON", "TUE", "WED"];
+    days.forEach(function(day) {
+        forecastHTML = forecastHTML + `  
+        <div class="col">
+        <ul>
+        <li class="day">${day}</li>
+        <li class="icon"><img src="https://openweathermap.org/img/wn/01d@2x.png" alt="" id = "day-icon"/></li>
+        <li class="temp-high">50° </li>
+        <li class="temp-low">41° </li>
+        </ul>
+        </div>`;
+    })
+    forecastHTML = forecastHTML + `</div>`;
+    forecastElement.innerHTML = forecastHTML;
+}
+
 function retrieveCurrentData (response){
     //console.log(response);
     fahrenheitTemp = response.data.main.temp;
@@ -86,6 +105,8 @@ function convertToFahrenheit (event){
 }
 
 let fahrenheitTemp = null;
+
+displayForecast();
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
