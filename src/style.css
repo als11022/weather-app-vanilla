@@ -78,6 +78,7 @@ a:hover{
 }
 #current-button {
     color: #17a2b8;
+    font-size: 12px;
 }
 .card {
     margin: 50px 0 5px 0;
@@ -106,4 +107,7 @@ a:hover{
     font-size: 14px;
     opacity: 0.5;
   }
-  
+  .container {
+      width: 100%;
+      height: auto;
+  }
