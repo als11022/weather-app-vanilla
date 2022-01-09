@@ -110,35 +110,13 @@ function getCurrentPosition (){
     navigator.geolocation.getCurrentPosition(retrieveGpsLocation);
 }
 
-function convertToCelsius (event){
-    event.preventDefault();
-    let temperatureElement = document.querySelector("#temperature");
-    fahrenheitLink.classList.remove("active");
-    celsiusLink.classList.add("active");
-    let celsiusTemp = ((fahrenheitTemp-32)*5)/9;
-    temperatureElement.innerHTML = Math.round(celsiusTemp);
-}
 
-function convertToFahrenheit (event){
-    event.preventDefault();
-    celsiusLink.classList.remove("active");
-    fahrenheitLink.classList.add("active");
-    let temperatureElement = document.querySelector("#temperature");
-    temperatureElement.innerHTML = Math.round(fahrenheitTemp);
-}
 
-let fahrenheitTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleSubmit);
 
 let button = document.querySelector("#current-button");
 button.addEventListener("click", getCurrentPosition);
-
-let celsiusLink = document.querySelector("#c-link");
-celsiusLink.addEventListener("click", convertToCelsius);
-
-let fahrenheitLink = document.querySelector("#f-link");
-fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 search("New York");
